@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GRI prediction</title>
+  <meta charset="utf-8">
+  <meta name="description" content="GRI prediction">
+  <meta name="author" content="">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>GRI prediction</h1>
+    <h2>Description of ShinyApp, prepared as Course Project</h2>
+    <p><br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>GRI</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>Global reporting initiative <a href="https://www.globalreporting.org/Pages/default.aspx">(GRI)</a> is an organization, which helps companies all over the world to unify their non-financial reporting in terms of <a href="http://en.wikipedia.org/wiki/Sustainable_development">sustainable development</a></p></li>
+<li><p><a href="https://sanic.shinyapps.io/DataProducts_CourseProject/">Shiny application</a> 
+uses pre-processed data, obtained from appropriate 
+<a href="http://database.globalreporting.org/search">database</a>
+about numbers of reports, published by companies of different countries in the world</p></li>
+<li><p>Application shows prediction interval of possible report numbers at the year right 
+after the last one from the selected interval</p></li>
+<li><p>&#39;Prediction&#39; is quite theoretical, based on the simpliest linear regression model and, of course, can be improved:) </p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Input/Output example</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/controllers.png" alt="controllers"></p>
+
+<ul>
+<li>Based on selected country and years interval, we get appropriate output:
+<img src="assets/img/output.png" alt="output"></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Prediction results</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Selected interval from 1999 to 2012 for US contains data for all 14 years</li>
+<li>Blue line is the regression line, for which formula is represented right below the plot name (selected country). Dashed lines are prediction intervals, based on simple linear regression model.</li>
+<li>The year of prediction is 2013, because it follows 2012 - the last one from selected interval</li>
+<li>Prediction algorithm gives the following output on correct input data:</li>
+</ul>
+
+<pre><code>## [1] &quot;Based on input parameters, in  2013  number of GRI reports could be in [ 138 , 334 ] interval.&quot;
+</code></pre>
+
+<ul>
+<li>In case of two or less data points appropriate notification is shown to the user:</li>
+</ul>
+
+<pre><code>## [1] &quot;Prediction is not possible.&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Conclusions</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Published application tries to &#39;predict&#39; number of GRI reports in given country at the year after the end of selected interval based in input data from that interval</li>
+<li>This approach can&#39;t be used for real life, but is very rough estimation of countries&#39; sustainability based on information about their companies (who publish non-financial reports)</li>
+<li>Prediction considers interval instead of exact eexpected number of reports, which better shows uncertainty</li>
+<li>That&#39;s motivation for companies to publish non-financial reports for better ranks among countries :)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='GRI'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Input/Output example'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Prediction results'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Conclusions'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
